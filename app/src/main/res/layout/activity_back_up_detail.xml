@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="30dp"
+    android:paddingStart="30dp"
+    android:paddingEnd="30dp"
+    tools:context="com.banda.android.musicplayer.BackUpDetailActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/backuptext"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="70dp"
+        />
+
+    <Button
+        android:id="@+id/backup"
+        style="@style/Button"
+        android:layout_marginBottom="50dp"
+        android:onClick="backUp"
+        android:text="@string/backup"
+        android:contentDescription="@string/backup_description"/>
+
+    <Button
+        android:id="@+id/recover"
+        style="@style/Button"
+        android:onClick="recover"
+        android:text="@string/recover"
+        android:contentDescription="@string/recover_description"/>
+
+</LinearLayout>

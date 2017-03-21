@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Music Player</string>
+    <string name="my_music">My Music</string>
+    <string name="favourite">Favourite</string>
+    <string name="now">Now Playing</string>
+    <string name="backup">BackUp</string>
+    <string name="time">0:00</string>
+    <string name="duration">4:30</string>
+    <string name="recover">Recover</string>
+    <string name="share">Share Music With :</string>
+    <string name="add_favourite"> Was add to the Favourite</string>
+    <string name="backuptext">This is used to back up your Favourite Music List</string>
+    <string name="dialog_title">Music Search</string>
+    <string name="dialog_hint">Song (e.g. SkyFall)</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_add">Search</string>
+    <string name="back_up_progress">Backing up ....</string>
+    <string name="delete_progress">Preparing ....</string>
+    <string name="recover_progress">Recovering....</string>
+    <string name="music_progress">Loading Music ....</string>
+    <string name="search_progress">Searching ....</string>
+    <string name="favourite_progress">Loading Favourite ....</string>
+    <string name="welcome">Welcome</string>
+    <string name="welcome_back">Welcome Back ,</string>
+    <string name="error">No Music Were Found</string>
+    <string name="net_error">No Network available , Please Connect To network and Try again</string>
+    <string name="favourite_error">No Favourite Found</string>
+    <string name="db_insert_error">Failed to insert row into </string>
+    <string name="db_uri_error">Unknown uri:</string>
+    <string name="empty_now">There Is No Music Playing</string>
+    <string name="album_load_error">Error Happened While Loading Albums</string>
+    <string name="music_load_error">Error Happened While Loading Music</string>
+    <string name="google_sign_error">ERROR While Signing in</string>
+    <string name="connection_error">Can Not Connect to the Internet </string>
+
+    <string name="transition_avatar" translatable="false">avatar</string>
+    <string name="transition_album" translatable="false">album</string>
+    <string name="open_connection" translatable="false">Open Connection</string>
+    <string name="start_buffering" translatable="false">Start Read Buffer</string>
+    <string name="music_player_title" translatable="false">Rap God</string>
+    <string name="music_player_artist" translatable="false">Eminem</string>
+    <string name="album">Albums</string>
+    <string name="album_description">this is the album cover image </string>
+    <string name="header">this is Music Player Header </string>
+    <string name="backup_description">this button is used to back up your favourite music list to the cloud</string>
+    <string name="google_description">this button is used to sign in with google for the back up</string>
+    <string name="recover_description">this button is used to Recover your favourite music list from Internet</string>
+    <string name="cover">this is the cover  of the song</string>
+    <string name="seek_bar">this is used to Show the progress of the song you currently playing</string>
+    <string name="play">this button is used to start or pause the music</string>
+    <string name="previous">this button is used to play the previous track </string>
+    <string name="next">this button is used to play the next track </string>
+    <string name="fap_share">This Button Used To share The Music you Currently Playing</string>
+    <string name="nav_header">This is the Side Navigator header</string>
+    <string name="favourite_description">This button is used to add the current playing music to your favourite</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3767256396668976/8697565849</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="pref_now_playing_key" translatable="false">now</string>
+    <string name="pref_order_key" translatable="false">key</string>
+    <string name="pref_order_label">Sort by :</string>
+    <string name="pref_order_label_title">Title</string>
+    <string name="pref_order_label_artist">Artist</string>
+    <string name="pref_order_label_album">Album</string>
+    <string name="pref_order_title_value" translatable="false">title</string>
+    <string name="pref_order_artist_value" translatable="false">artist</string>
+    <string name="pref_order_album_value" translatable="false">album</string>
+    <string name="add_widget">Add widget</string>
+</resources>

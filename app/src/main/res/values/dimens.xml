@@ -1,0 +1,13 @@
+<resources>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="button_width">300dp</dimen>
+    <dimen name="default_elevation">6dp</dimen>
+    <dimen name="button_padding">20dp</dimen>
+    <dimen name="widget_min_height">100dp</dimen>
+    <dimen name="widget_min_width">250dp</dimen>
+    <dimen name="music_player_margin">8dp</dimen>
+    <dimen name="music_player_padding">10dp</dimen>
+    <dimen name="cover">350dp</dimen>
+    <dimen name="header">256dp</dimen>
+</resources>

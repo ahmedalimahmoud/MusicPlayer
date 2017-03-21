@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "813917299817",
+    "firebase_url": "https://musicplayer-ab6dc.firebaseio.com",
+    "project_id": "musicplayer-ab6dc",
+    "storage_bucket": "musicplayer-ab6dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813917299817:android:e92ac610060b378d",
+        "android_client_info": {
+          "package_name": "com.banda.android.musicplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813917299817-8ojcvut13ot8kqdmonv9i2lsi8923qfm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.banda.android.musicplayer",
+            "certificate_hash": "5dcb7facca353bdb478567d32623dc5920de27f1"
+          }
+        },
+        {
+          "client_id": "813917299817-l582uae64qsi2i710t1vr297av0n3dtr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeu8qeMpWQ2eMszDvOWIqlnxnwn6De3Qw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "813917299817-l582uae64qsi2i710t1vr297av0n3dtr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

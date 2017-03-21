@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="grid_columns">2</integer>
+    <integer name="grid_columns_album">3</integer>
+    <integer name="now_playing">1000</integer>
+</resources>

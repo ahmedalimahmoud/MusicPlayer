@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/now"
+            android:icon="@drawable/ic_equalizer_48px"
+            android:title="@string/now"
+            />
+        <item
+            android:id="@+id/all"
+            android:icon="@drawable/ic_queue_music_48px"
+            android:title="@string/my_music" />
+        <item
+            android:id="@+id/favourite"
+            android:icon="@drawable/ic_favorite_48px"
+            android:title="@string/favourite" />
+        <item
+            android:id="@+id/album"
+            android:icon="@drawable/ic_album_48px"
+            android:title="@string/album" />
+        <item
+            android:id="@+id/backup"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/backup" />
+    </group>
+
+</menu>

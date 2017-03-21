@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="pref_order_option_labels">
+        <item>@string/pref_order_label_title</item>
+        <item>@string/pref_order_label_artist</item>
+        <item>@string/pref_order_label_album</item>
+
+    </array>
+
+    <array name="pref_order_option_values">
+        <item>@string/pref_order_title_value</item>
+        <item>@string/pref_order_artist_value</item>
+        <item>@string/pref_order_album_value</item>
+    </array>
+</resources>
