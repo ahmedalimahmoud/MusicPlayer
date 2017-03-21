@@ -3,11 +3,11 @@ apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     signingConfigs {
-        config {
+        udacity {
             keyAlias 'udacity'
-            keyPassword '01145602349'
-            storeFile file("$rootDir/musicPlayer_keyStore.jks")
-            storePassword '011456023489'
+            keyPassword 'password'
+            storeFile file('E:/FCI/Android/Capstone/MusicPlayer/keystore.jks')
+            storePassword 'password'
         }
     }
     compileSdkVersion 25
@@ -19,18 +19,20 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.udacity
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
         }
         shrunk
                 {
                     minifyEnabled true
                     shrinkResources true
                 }
+    }
+    productFlavors {
     }
 }
 
