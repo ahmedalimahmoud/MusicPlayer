@@ -32,6 +32,7 @@
     <string name="music_load_error">Error Happened While Loading Music</string>
     <string name="google_sign_error">ERROR While Signing in</string>
     <string name="connection_error">Can Not Connect to the Internet </string>
+    <string name="permission_error">Permission denied to read your External storage </string>
 
     <string name="transition_avatar" translatable="false">avatar</string>
     <string name="transition_album" translatable="false">album</string>

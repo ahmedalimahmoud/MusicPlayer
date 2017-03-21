@@ -3,13 +3,16 @@ package com.banda.android.musicplayer;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
@@ -53,7 +56,7 @@ public class MainActivity extends AppCompatActivity
     private static final String ALBUM_SONG_EXTRA = "album_songs";
     private static String sort;
     public static int now;
-    private static boolean run=false;
+    private static boolean run = false;
 
     private static final int LOADER = 22;
     private static final int SEARCH_LOADER = 23;
@@ -78,6 +81,7 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings({"WeakerAccess", "CanBeFinal"})
     @BindView(R.id.nav_view)
     NavigationView navigationView;
+
 
 
     @Override
@@ -107,17 +111,42 @@ public class MainActivity extends AppCompatActivity
             }
 
         } else {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+                setupPreference();
+            } else {
+                ActivityCompat.requestPermissions(MainActivity.this,
+                        new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
+                        1);
 
-            setupPreference();
+            }
         }
-
-
-
 
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String permissions[], @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case 1: {
+
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    list.setVisibility(View.VISIBLE);
+                    mEmptyView.setVisibility(View.GONE);
+                    setupPreference();
+                } else {
+
+                    list.setVisibility(View.GONE);
+                    mEmptyView.setVisibility(View.VISIBLE);
+                    Toast.makeText(MainActivity.this, getResources().getString(R.string.permission_error), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+        }
+    }
+
     private void runAlbumSongs(AlbumInfo albumInfo) {
-        run=false;
+        run = false;
         ((CollapsingToolbarLayout) findViewById(R.id.toolbar_layout)).setTitle(albumInfo.getAlbumName());
         ImageView cover = (ImageView) findViewById(R.id.collapsingImageView);
         if (albumInfo.getAlbumCover() != null) {
@@ -173,7 +202,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void runAllMusic() {
-        run=false;
+        run = false;
         ((CollapsingToolbarLayout) findViewById(R.id.toolbar_layout)).setTitle(getResources().getString(R.string.app_name));
         ((ImageView) findViewById(R.id.collapsingImageView)).setImageResource(R.drawable.image1);
 
@@ -190,7 +219,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void searchMusic(String songTitle) {
-        run=false;
+        run = false;
         ((CollapsingToolbarLayout) findViewById(R.id.toolbar_layout)).setTitle(getResources().getString(R.string.dialog_add));
         ((ImageView) findViewById(R.id.collapsingImageView)).setImageResource(R.drawable.image2);
         Bundle queryBundle = new Bundle();
@@ -214,7 +243,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void runFavourite() {
-        run=true;
+        run = true;
         ((CollapsingToolbarLayout) findViewById(R.id.toolbar_layout)).setTitle(getResources().getString(R.string.favourite));
         ((ImageView) findViewById(R.id.collapsingImageView)).setImageResource(R.drawable.image4);
 
@@ -281,7 +310,7 @@ public class MainActivity extends AppCompatActivity
                 intent.putExtra(DetailsActivity.EXTRA_SONGS, now);
                 startActivity(intent);
             } else {
-                Toast.makeText(this, "There Is No Music Playing", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getResources().getString(R.string.empty_now), Toast.LENGTH_LONG).show();
             }
 
         } else if (id == R.id.all) {
@@ -300,6 +329,7 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 
     @Override
     public Loader<List<SongInfo>> onCreateLoader(int id, final Bundle args) {
@@ -333,6 +363,7 @@ public class MainActivity extends AppCompatActivity
                         return null;
                     }
                     try {
+
 
                         Uri songsUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
                         String selection = MediaStore.Audio.Media.IS_MUSIC + " != 0";
@@ -433,7 +464,7 @@ public class MainActivity extends AppCompatActivity
                                     songInfoModel.setAlbum(cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM)));
                                     String albumId = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM_ID));
                                     Uri smusicUri = android.provider.MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI;
-                                    Cursor music = getContentResolver().query(smusicUri, null         //should use where clause(_ID==albumid)
+                                    Cursor music = getContentResolver().query(smusicUri, null
                                             , MediaStore.Audio.Albums._ID + "=?",
                                             new String[]{String.valueOf(albumId)}, null);
                                     assert music != null;
@@ -650,8 +681,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        if(run)
-        {
+        if (run) {
             runFavourite();
         }
     }

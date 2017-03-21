@@ -278,7 +278,7 @@ public class DetailsActivity extends Activity {
     }
     private class MyThread extends Thread {
         public void run() {
-            while (mediaPlayer != null) {
+            while (mediaPlayer!=null) {
                 try {
                     Thread.sleep(1000);
                 } catch (Exception e) {

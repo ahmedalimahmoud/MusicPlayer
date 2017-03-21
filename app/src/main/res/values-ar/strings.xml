@@ -25,6 +25,8 @@
     <string name="fap_share">"هذا الزر يستخدم لمشاركة الاغنية "</string>
     <string name="favourite">المفضلة</string>
     <string name="favourite_error">لا يوجد مفضلة</string>
+    <string name="permission_error">تم رفض صلاحية القرائة من الزاكرة الداخلية </string>
+
     <string name="favourite_progress">يتم تحميل المفضلة ....</string>
     <string name="google_description">هذا الزر يستخدم للتسجيل بحساب جوجل</string>
     <string name="google_sign_error">حدث خطأ اثناء تسجيل الدخول</string>
