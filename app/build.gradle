@@ -6,7 +6,7 @@ android {
         udacity {
             keyAlias 'udacity'
             keyPassword 'password'
-            storeFile file('E:/FCI/Android/Capstone/MusicPlayer/keystore.jks')
+            storeFile file("$rootDir/keystore.jks")
             storePassword 'password'
         }
     }
